@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:40:23 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/16 10:48:22 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/16 14:21:16 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,5 @@ int	main(int ac, char **av)
 	if (ac < 2)
 		return (print_error());
 	write(1, "test\n", 5);
+	return (0);
 }
