@@ -1,44 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   args.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 10:47:47 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/17 10:52:06 by fluchten         ###   ########.fr       */
+/*   Created: 2023/01/17 11:16:54 by fluchten          #+#    #+#             */
+/*   Updated: 2023/01/17 11:41:38 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	print_error(void)
+static int	ft_isdigit(int c)
 {
-	write(2, "Error\n", 6);
+	return (c >= '0' && c <= '9');
+}
+
+static int	args_is_digits(int ac, char **av)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+    while (i < ac) 
+	{
+		j = 0;
+        while (av[i][j]) 
+		{
+            if (!ft_isdigit(av[i][j]))
+				return (0);
+			j++;
+        }
+		i++;
+    }
 	return (1);
 }
 
-int	ft_atoi(const char *str)
+int	check_args(int ac, char **av)
 {
-	int	res;
-	int	sign;
-	int	i;
-
-	res = 0;
-	sign = 1;
-	i = 0;
-	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		res = res * 10 + (str[i] - '0');
-		i++;
-	}
-	return (sign * res);
+	if (ac < 2)
+		return (print_error());
+	else if (ac > 2)
+		return (args_is_digits(ac, av));
+	return (1);
 }

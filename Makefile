@@ -6,7 +6,7 @@
 #    By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 10:39:27 by fluchten          #+#    #+#              #
-#    Updated: 2023/01/16 14:19:32 by fluchten         ###   ########.fr        #
+#    Updated: 2023/01/17 11:42:19 by fluchten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ RM = rm -f
 INC_DIR = -I includes
 
 SRCS_DIR = srcs
-SRCS = main.c \
+SRCS = args.c \
+		main.c \
 		utils.c
 
 OBJS = $(addprefix ${SRCS_DIR}/, ${SRCS:%.c=%.o})
