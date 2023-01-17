@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:16:54 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/17 11:41:38 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/17 11:45:33 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,17 @@ static int	args_is_digits(int ac, char **av)
 	int	j;
 
 	i = 1;
-    while (i < ac) 
+	while (i < ac)
 	{
 		j = 0;
-        while (av[i][j]) 
+		while (av[i][j])
 		{
-            if (!ft_isdigit(av[i][j]))
+			if (!ft_isdigit(av[i][j]))
 				return (0);
 			j++;
-        }
+		}
 		i++;
-    }
+	}
 	return (1);
 }
 

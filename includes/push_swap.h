@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:40:51 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/17 11:43:13 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/17 11:44:18 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ typedef struct s_stack
 	int				value;
 	struct s_stack	*next;
 }					t_stack;
-
 
 /* args */
 int		check_args(int ac, char **av);
