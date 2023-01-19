@@ -6,7 +6,7 @@
 #    By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 10:39:27 by fluchten          #+#    #+#              #
-#    Updated: 2023/01/19 12:26:54 by fluchten         ###   ########.fr        #
+#    Updated: 2023/01/19 13:40:06 by fluchten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = push_swap
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-RM = rm -f
+RM = rm -rf
 
 INC_DIR = -I includes
 
@@ -32,18 +32,20 @@ SRCS =	args/args.c \
 		utils/utils.c \
 		main.c
 
-OBJS = $(addprefix ${SRCS_DIR}/, ${SRCS:%.c=%.o})
+OBJS_DIR = objs
+OBJS = $(addprefix ${OBJS_DIR}/, ${SRCS:%.c=%.o})
 
 all: ${NAME}
 
-%.o: %.c
+${OBJS_DIR}/%.o: ${SRCS_DIR}/%.c
+	@mkdir -p ${@D}
 	${CC} ${CFLAGS} ${INC_DIR} -c $< -o $@
 
 ${NAME}: ${OBJS}
 	${CC} ${CFLAGS} ${OBJS} -o ${NAME}
 
 clean:
-	${RM} ${OBJS}
+	${RM} ${OBJS_DIR}
 
 fclean:	clean
 	${RM} ${NAME}
