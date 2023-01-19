@@ -1,47 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   args.c                                             :+:      :+:    :+:   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/17 11:16:54 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/17 11:45:33 by fluchten         ###   ########.fr       */
+/*   Created: 2023/01/18 08:37:16 by fluchten          #+#    #+#             */
+/*   Updated: 2023/01/19 12:24:52 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_isdigit(int c)
+void	free_stack(t_stack *stack)
 {
-	return (c >= '0' && c <= '9');
+	t_stack	*temp;
+
+	while (stack)
+	{
+		temp = stack->next;
+		free(stack);
+		stack = temp;
+	}
 }
 
-static int	args_is_digits(int ac, char **av)
+int	stack_len(t_stack *stack)
 {
 	int	i;
-	int	j;
 
-	i = 1;
-	while (i < ac)
+	i = 0;
+	while (stack)
 	{
-		j = 0;
-		while (av[i][j])
-		{
-			if (!ft_isdigit(av[i][j]))
-				return (0);
-			j++;
-		}
 		i++;
+		stack = stack->next;
 	}
-	return (1);
+	return (i);
 }
 
-int	check_args(int ac, char **av)
+void	print_stack(t_stack *stack)
 {
-	if (ac < 2)
-		return (print_error());
-	else if (ac > 2)
-		return (args_is_digits(ac, av));
-	return (1);
+	if (!stack)
+	{
+		printf("The list is empty!\n");
+		return ;
+	}
+	while (stack)
+	{
+		printf("\033[0;31m[%d] \033[0m", stack->content);
+		stack = stack->next;
+	}
+	printf("\n");
 }

@@ -1,30 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   stack_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 10:40:23 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/19 12:44:01 by fluchten         ###   ########.fr       */
+/*   Created: 2023/01/19 12:25:01 by fluchten          #+#    #+#             */
+/*   Updated: 2023/01/19 12:27:09 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+int	check_stack_duplicate(t_stack *stack)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	t_stack	*temp;
 
-	if (!check_args(ac, av))
-		exit_error();
-	stack_a = init_stack(ac, av);
-	stack_b = NULL;
-	print_stack(stack_a);
-	sort(&stack_a, &stack_b);
-	print_stack(stack_a);
-	free_stack(stack_a);
-	free_stack(stack_b);
+	while (stack)
+	{
+		temp = stack->next;
+		while (temp)
+		{
+			if (stack->content == temp->content)
+				return (1);
+			temp = temp->next;
+		}
+		stack = stack->next;
+	}
 	return (0);
+}
+
+int	check_stack_is_sorted(t_stack *stack)
+{
+	while (stack->next)
+	{
+		if (stack->content > stack->next->content)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
 }
