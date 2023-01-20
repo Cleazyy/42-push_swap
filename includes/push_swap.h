@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:40:51 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/19 12:43:53 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/20 11:50:27 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,14 @@ int		check_args(int ac, char **av);
 t_stack	*init_stack(int ac, char **av);
 void	free_stack(t_stack *stack);
 int		stack_len(t_stack *stack);
+int		stack_smallest_element(t_stack *stack, int *index);
 void	print_stack(t_stack *stack);
 int		check_stack_duplicate(t_stack *stack);
 int		check_stack_is_sorted(t_stack *stack);
 /* sort */
 void	sort(t_stack **stack_a, t_stack **stack_b);
 void	sort_three(t_stack **stack_a);
+void	sort_five(t_stack **stack_a, t_stack **stack_b);
 /* operations */
 void	sa(t_stack **stack_a);
 void	sb(t_stack **stack_b);

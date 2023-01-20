@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 08:37:16 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/19 12:24:52 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/20 11:49:36 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,29 @@ int	stack_len(t_stack *stack)
 		stack = stack->next;
 	}
 	return (i);
+}
+
+int	stack_smallest_element(t_stack *stack, int *index)
+{
+	int	min;
+	int	min_pos;
+	int	i;
+
+	i = 0;
+	min_pos = 0;
+	min = stack->content;
+	while (stack)
+	{
+		if (stack->content < min)
+		{
+			min = stack->content;
+			min_pos = i;
+		}
+		stack = stack->next;
+		i++;
+	}
+	*(index) = min_pos;
+	return (min);
 }
 
 void	print_stack(t_stack *stack)

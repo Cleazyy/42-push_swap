@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 10:24:26 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/19 12:31:56 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/20 11:51:02 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,45 @@ void	sort_three(t_stack **stack_a)
 	i = (*stack_a)->content;
 	j = (*stack_a)->next->content;
 	k = (*stack_a)->next->next->content;
-	if (i < j && i < k && j > k) // 1 3 2
+	if (i < j && i < k && j > k)
 	{
 		sa(stack_a);
 		ra(stack_a);
 	}
-	else if (i > j && i < k && j < k) // 2 1 3
+	else if (i > j && i < k && j < k)
 		sa(stack_a);
-	else if (i < j && i > k && j > k) // 2 3 1
+	else if (i < j && i > k && j > k)
 		rra(stack_a);
-	else if (i > j && i > k && j < k) // 3 1 2
+	else if (i > j && i > k && j < k)
 		ra(stack_a);
-	else if (i > j && i > k && j > k) // 3 2 1
+	else if (i > j && i > k && j > k)
 	{
 		sa(stack_a);
 		rra(stack_a);
 	}
+}
+
+void	sort_five(t_stack **stack_a, t_stack **stack_b)
+{
+	int		min;
+	int		min_pos;
+	int		i;
+
+	i = 0;
+	while (i < 2)
+	{
+		min = stack_smallest_element((*stack_a), &min_pos);
+		while ((*stack_a)->content > min)
+		{
+			if (min_pos < (stack_len(*stack_a) / 2))
+				ra(stack_a);
+			else
+				rra(stack_a);
+		}
+		pb(stack_a, stack_b);
+		i++;
+	}
+	sort_three(stack_a);
+	pa(stack_a, stack_b);
+	pa(stack_a, stack_b);
 }
