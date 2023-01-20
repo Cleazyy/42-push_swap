@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:40:51 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/20 11:55:48 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/20 13:35:09 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ void	free_stack(t_stack *stack);
 int		stack_len(t_stack *stack);
 int		stack_smallest_element(t_stack *stack, int *index);
 void	print_stack(t_stack *stack);
-int		check_stack_duplicate(t_stack *stack);
-int		check_stack_is_sorted(t_stack *stack);
+void	check_valid_stack(t_stack *stack);
 /* sort */
 void	sort(t_stack **stack_a, t_stack **stack_b);
 void	sort_three(t_stack **stack_a);
@@ -53,7 +52,7 @@ void	rrr(t_stack **stack_a, t_stack **stack_b);
 /* utils */
 void	exit_error(void);
 void	free_stack_error(t_stack *stack);
-int		ft_isdigit(int c);
 int		ft_atoi(const char *str);
+char	**ft_split(const char *str, char c);
 
 #endif

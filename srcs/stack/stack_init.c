@@ -20,6 +20,8 @@ static t_stack	*new_stack(char *content)
 	if (!element)
 		return (NULL);
 	element->content = ft_atoi(content);
+	if (!element->content)
+		free_stack_error(element);
 	element->next = NULL;
 	return (element);
 }
@@ -30,18 +32,23 @@ t_stack	*init_stack(int ac, char **av)
 	t_stack	*temp;
 	int		i;
 
-	stack_a = new_stack(av[1]);
+	if (ac == 2)
+	{
+		stack_a = new_stack(av[0]);
+		i = 1;
+	}
+	else
+	{
+		stack_a = new_stack(av[1]);
+		i = 2;
+	}
 	temp = stack_a;
-	i = 2;
-	while (i < ac)
+	while (av[i])
 	{
 		temp->next = new_stack(av[i]);
 		temp = temp->next;
 		i++;
 	}
-	if (check_stack_duplicate(stack_a))
-		free_stack_error(stack_a);
-	if (check_stack_is_sorted(stack_a))
-		free_stack_error(stack_a);
+	check_valid_stack(stack_a);
 	return (stack_a);
 }
