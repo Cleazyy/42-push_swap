@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:40:51 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/20 13:35:09 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/21 14:26:07 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,6 @@ void	rrr(t_stack **stack_a, t_stack **stack_b);
 void	exit_error(void);
 void	free_stack_error(t_stack *stack);
 int		ft_atoi(const char *str);
-char	**ft_split(const char *str, char c);
+char	**ft_split(const char *s, char c);
 
 #endif
