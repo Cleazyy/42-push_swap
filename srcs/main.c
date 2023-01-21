@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:40:23 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/21 14:45:09 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/21 14:49:56 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ int	main(int ac, char **av)
 		stack_a = init_stack(ac, ft_split(av[1], ' '));
 	else
 		stack_a = init_stack(ac, av);
-	if (!stack_a)
-		exit_error();
 	stack_b = NULL;
 	print_stack(stack_a);
 	sort(&stack_a, &stack_b);
