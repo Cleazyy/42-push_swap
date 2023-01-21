@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 07:47:15 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/21 14:22:02 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/21 14:44:42 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ static t_stack	*new_stack(char *content)
 	if (!element)
 		return (NULL);
 	element->content = ft_atoi(content);
-	if (!element->content)
-		free_stack_error(element);
 	element->next = NULL;
 	return (element);
 }
