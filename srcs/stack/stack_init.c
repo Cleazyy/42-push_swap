@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 07:47:15 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/21 14:48:59 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/21 15:25:58 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ static t_stack	*new_stack(char *content)
 {
 	t_stack	*element;
 
+	if (!is_valid_number(content))
+		exit_error();
 	element = malloc(sizeof(t_stack));
 	if (!element)
 		return (NULL);
