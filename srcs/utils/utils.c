@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:47:47 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/22 10:51:04 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/22 10:53:55 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int	is_valid_number(const char *str)
 	int	i;
 
 	i = 0;
+	if (!str)
+		return (0);
 	if (str[i] == '+' || str[i] == '-')
 		i++;
 	while (str[i])
