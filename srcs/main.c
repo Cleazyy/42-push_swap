@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:40:23 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/21 14:49:56 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/22 10:56:02 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int ac, char **av)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
-	if (ac < 2)
+	if (ac <= 1)
 		exit_error();
 	if (ac == 2)
 		stack_a = init_stack(ac, ft_split(av[1], ' '));
