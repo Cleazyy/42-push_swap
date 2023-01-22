@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:40:51 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/21 15:25:19 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/22 10:52:09 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@ void	rra(t_stack **stack_a);
 void	rrb(t_stack **stack_b);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
 /* utils */
+int		ft_atoi(const char *str);
+char	**ft_split(const char *s, char c);
 void	exit_error(void);
 void	free_stack_error(t_stack *stack);
 int		ft_isdigit(int c);
 int		is_valid_number(const char *str);
-int		ft_atoi(const char *str);
-char	**ft_split(const char *s, char c);
 
 #endif

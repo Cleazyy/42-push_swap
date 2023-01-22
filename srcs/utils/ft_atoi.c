@@ -1,46 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 10:47:47 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/22 10:51:04 by fluchten         ###   ########.fr       */
+/*   Created: 2022/10/04 11:14:18 by fluchten          #+#    #+#             */
+/*   Updated: 2023/01/22 10:51:33 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	exit_error(void)
+int	ft_atoi(const char *str)
 {
-	write(1, "Error\n", 6);
-	exit(EXIT_FAILURE);
-}
-
-void	free_stack_error(t_stack *stack)
-{
-	free_stack(stack);
-	exit_error();
-}
-
-int	ft_isdigit(int c)
-{
-	return (c >= '0' && c <= '9');
-}
-
-int	is_valid_number(const char *str)
-{
+	int	res;
+	int	sign;
 	int	i;
 
+	res = 0;
+	sign = 1;
 	i = 0;
-	if (str[i] == '+' || str[i] == '-')
+	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
 		i++;
-	while (str[i])
+	if (str[i] == '+' || str[i] == '-')
 	{
-		if (!ft_isdigit(str[i]))
-			return (0);
+		if (str[i] == '-')
+			sign = -1;
 		i++;
 	}
-	return (1);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = res * 10 + (str[i] - 48);
+		i++;
+	}
+	return (sign * res);
 }
