@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 19:19:05 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/20 11:55:50 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/23 13:15:25 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 	else if (len == 5)
 		sort_five(stack_a, stack_b);
 	else
-		printf("in progress\n");
+	{
+		sort_struct(stack_a);
+	}
 }

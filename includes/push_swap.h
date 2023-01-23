@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:40:51 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/22 18:36:32 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/23 12:42:14 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	sort(t_stack **stack_a, t_stack **stack_b);
 void	sort_three(t_stack **stack_a);
 void	sort_four(t_stack **stack_a, t_stack **stack_b);
 void	sort_five(t_stack **stack_a, t_stack **stack_b);
+void	sort_struct(t_stack **stack_a);
 /* operations */
 void	sa(t_stack **stack_a);
 void	sb(t_stack **stack_b);
