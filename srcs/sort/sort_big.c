@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 12:41:08 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/23 13:14:59 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/24 10:01:41 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,4 +96,33 @@ void	sort_struct(t_stack **stack_a)
 	}
 	free(tab);
 	put_tab_struct(tab_new, *stack_a);
+}
+
+void	sort_radix(t_stack **stack_a, t_stack **stack_b)
+{
+	int	max_bits;
+	int	size;
+	int	num;
+	int	i;
+	int	j;
+
+	size = stack_len(*stack_a);
+	max_bits = 0;
+	while (((size - 1) >> max_bits) != 0)
+		max_bits++;
+	i = -1;
+	while (++i < max_bits)
+	{
+		j = -1;
+		while (++j < size)
+		{
+			num = (*stack_a)->content;
+			if (((num >> i) & 1) == 1)
+				ra(stack_a);
+			else
+				pb(stack_a, stack_b);
+		}
+		while (*stack_b)
+			pa(stack_a, stack_b);
+	}
 }

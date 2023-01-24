@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 19:19:05 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/23 13:15:25 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/24 10:02:33 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 	else
 	{
 		sort_struct(stack_a);
+		sort_radix(stack_a, stack_b);
 	}
 }
