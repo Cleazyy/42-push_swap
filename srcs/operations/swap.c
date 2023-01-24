@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 10:55:14 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/19 11:58:42 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/24 11:01:57 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@ static void	swap(t_stack **stack)
 {
 	int	temp;
 
-	if ((*stack) && (*stack)->next)
-	{
-		temp = (*stack)->content;
-		(*stack)->content = (*stack)->next->content;
-		(*stack)->next->content = temp;
-	}
+	if (!*stack || !(*stack)->next)
+        return;
+	temp = (*stack)->content;
+	(*stack)->content = (*stack)->next->content;
+	(*stack)->next->content = temp;
 }
 
 void	sa(t_stack **stack_a)

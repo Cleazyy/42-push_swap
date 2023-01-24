@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 09:08:43 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/19 11:42:19 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/24 11:01:07 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,15 @@ static void	rotate(t_stack **stack)
 	t_stack	*head;
 	t_stack	*temp;
 
-	if (*stack && (*stack)->next)
-	{
-		head = *stack;
-		*stack = (*stack)->next;
-		temp = *stack;
-		while (temp->next)
-			temp = temp->next;
-		temp->next = head;
-		head->next = NULL;
-	}
+	if (!*stack || !(*stack)->next)
+        return;
+	head = *stack;
+	*stack = (*stack)->next;
+	temp = *stack;
+	while (temp->next)
+		temp = temp->next;
+	temp->next = head;
+	head->next = NULL;
 }
 
 void	ra(t_stack **stack_a)

@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:40:23 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/24 10:03:02 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/24 10:53:02 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ int	main(int ac, char **av)
 	else
 		stack_a = init_stack(ac, av);
 	stack_b = NULL;
+	print_stack(stack_a);
 	sort(&stack_a, &stack_b);
+	print_stack(stack_a);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);
