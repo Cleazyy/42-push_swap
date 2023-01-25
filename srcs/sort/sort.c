@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 19:19:05 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/25 12:05:59 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/25 16:46:30 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int	len;
 
-	(void) stack_b;
 	len = stack_size(*stack_a);
 	if (len == 2)
 		sa(stack_a);
