@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:40:51 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/25 14:38:05 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/25 19:58:24 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <limits.h>
 # include <stdio.h> // TO DELETE
+# include "libft.h"
 
 typedef struct s_stack
 {
@@ -54,8 +55,7 @@ void	rrr(t_stack **stack_a, t_stack **stack_b);
 /* utils */
 void	free_array(char **array);
 void	exit_free_stack(t_stack *stack, int error);
-int		ft_atoi(const char *str, int *error);
-char	**ft_split(const char *s, char c);
+int		convert_number(const char *str, int *error);
 /* TO DELETE */
 void	print_stack(t_stack *stack);
 

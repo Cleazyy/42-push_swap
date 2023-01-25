@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:47:47 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/25 12:11:44 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/25 19:56:40 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	error_number(int *error)
 	return (0);
 }
 
-int	ft_atoi(const char *str, int *error)
+int	convert_number(const char *str, int *error)
 {
 	long	res;
 	int		sign;

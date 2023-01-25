@@ -6,7 +6,7 @@
 #    By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 10:39:27 by fluchten          #+#    #+#              #
-#    Updated: 2023/01/25 19:43:42 by fluchten         ###   ########.fr        #
+#    Updated: 2023/01/25 20:03:56 by fluchten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,25 +32,31 @@ SRCS =	args/args.c \
 		stack/stack_check.c \
 		stack/stack_parsing.c \
 		stack/stack_utils.c \
-		utils/ft_split.c \
 		utils/utils.c \
 		main.c
 
 OBJS = $(addprefix ${OBJS_DIR}/, ${SRCS:%.c=%.o})
 
+LIBFT_PATH = libs/libft
+LIBFT_LIB = ${LIBFT_PATH}/libft.a
+LIBFT_INC = ${LIBFT_PATH}/includes
+
 all: ${NAME}
 
 ${OBJS_DIR}/%.o: ${SRCS_DIR}/%.c
 	@mkdir -p ${@D}
-	${CC} ${CFLAGS} -I ${INC_DIR} -c $< -o $@
+	${CC} ${CFLAGS} -I ${INC_DIR} -I ${LIBFT_INC} -c $< -o $@
 
 ${NAME}: ${OBJS}
-	${CC} ${CFLAGS} ${OBJS} -o ${NAME}
+	@make -C ${LIBFT_PATH}
+	${CC} ${CFLAGS} ${OBJS} ${LIBFT_LIB} -o ${NAME}
 
 clean:
+	@make clean -C ${LIBFT_PATH}
 	${RM} ${OBJS_DIR}
 
 fclean:	clean
+	@make fclean -C ${LIBFT_PATH}
 	${RM} ${NAME}
 
 re: fclean all
