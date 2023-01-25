@@ -6,7 +6,7 @@
 #    By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 10:39:27 by fluchten          #+#    #+#              #
-#    Updated: 2023/01/25 12:13:30 by fluchten         ###   ########.fr        #
+#    Updated: 2023/01/25 14:38:13 by fluchten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ RM = rm -rf
 INC_DIR = -I includes
 
 SRCS_DIR = srcs
-SRCS =	operations/push.c \
+SRCS =	args/args.c \
+		operations/push.c \
 		operations/reverse_rotate.c \
 		operations/rotate.c \
 		operations/swap.c \
