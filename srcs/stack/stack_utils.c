@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 08:37:16 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/20 11:49:36 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/25 12:13:01 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	free_stack(t_stack *stack)
 	}
 }
 
-int	stack_len(t_stack *stack)
+int	stack_size(t_stack *stack)
 {
 	int	i;
 
@@ -58,19 +58,4 @@ int	stack_smallest_element(t_stack *stack, int *index)
 	}
 	*(index) = min_pos;
 	return (min);
-}
-
-void	print_stack(t_stack *stack)
-{
-	if (!stack)
-	{
-		printf("The list is empty!\n");
-		return ;
-	}
-	while (stack)
-	{
-		printf("\033[0;31m[%d] \033[0m", stack->content);
-		stack = stack->next;
-	}
-	printf("\n");
 }

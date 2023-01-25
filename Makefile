@@ -6,7 +6,7 @@
 #    By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 10:39:27 by fluchten          #+#    #+#              #
-#    Updated: 2023/01/23 12:42:34 by fluchten         ###   ########.fr        #
+#    Updated: 2023/01/25 12:13:30 by fluchten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,9 +27,8 @@ SRCS =	operations/push.c \
 		sort/sort_little.c \
 		sort/sort.c \
 		stack/stack_check.c \
-		stack/stack_init.c \
+		stack/stack_parsing.c \
 		stack/stack_utils.c \
-		utils/ft_atoi.c \
 		utils/ft_split.c \
 		utils/utils.c \
 		main.c

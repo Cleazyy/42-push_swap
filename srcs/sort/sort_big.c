@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 12:41:08 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/24 10:01:41 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/25 12:05:59 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	*parsing_tab(t_stack **stack_a, int value)
 	int		*tab;
 	int		i;
 
-	tab = malloc(sizeof(int) * (stack_len(*stack_a) + 1));
+	tab = malloc(sizeof(int) * (stack_size(*stack_a) + 1));
 	if (!tab)
 		return (NULL);
 	temp = (*stack_a);
@@ -81,7 +81,7 @@ void	sort_struct(t_stack **stack_a)
 
 	tab = parsing_tab(stack_a, 1);
 	tab_new = parsing_tab(stack_a, 0);
-	size = stack_len(*stack_a);
+	size = stack_size(*stack_a);
 	i = 0;
 	while (i < size)
 	{
@@ -106,7 +106,7 @@ void	sort_radix(t_stack **stack_a, t_stack **stack_b)
 	int	i;
 	int	j;
 
-	size = stack_len(*stack_a);
+	size = stack_size(*stack_a);
 	max_bits = 0;
 	while (((size - 1) >> max_bits) != 0)
 		max_bits++;

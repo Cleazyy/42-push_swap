@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 09:56:59 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/24 10:57:49 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/25 10:04:40 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	reverse_rotate(t_stack **stack)
 	t_stack	*temp;
 
 	if (!*stack || !(*stack)->next)
-        return;
+		return ;
 	temp = *stack;
 	while (temp->next->next)
 		temp = temp->next;

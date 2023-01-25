@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 10:02:47 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/24 10:54:43 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/25 10:04:23 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	push(t_stack **stack1, t_stack **stack2)
 	t_stack	*temp;
 
 	if (!*stack1)
-        return;
+		return ;
 	temp = *stack1;
 	*stack1 = (*stack1)->next;
 	temp->next = *stack2;

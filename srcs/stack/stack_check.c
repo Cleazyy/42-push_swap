@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 12:25:01 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/20 12:58:31 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/25 11:27:48 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	check_stack_is_sorted(t_stack *stack)
 void	check_valid_stack(t_stack *stack)
 {
 	if (check_stack_duplicate(stack))
-		free_stack_error(stack);
+		exit_free_stack(stack, 1);
 	else if (check_stack_is_sorted(stack))
-		free_stack_error(stack);
+		exit_free_stack(stack, 0);
 }

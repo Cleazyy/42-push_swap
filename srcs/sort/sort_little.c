@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 10:24:26 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/23 12:10:04 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/25 12:05:59 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	sort_four(t_stack **stack_a, t_stack **stack_b)
 	min = stack_smallest_element((*stack_a), &min_pos);
 	while ((*stack_a)->content > min)
 	{
-		if (min_pos <= (stack_len(*stack_a) / 2))
+		if (min_pos <= (stack_size(*stack_a) / 2))
 			ra(stack_a);
 		else
 			rra(stack_a);
@@ -69,7 +69,7 @@ void	sort_five(t_stack **stack_a, t_stack **stack_b)
 		min = stack_smallest_element((*stack_a), &min_pos);
 		while ((*stack_a)->content > min)
 		{
-			if (min_pos <= (stack_len(*stack_a) / 2))
+			if (min_pos <= (stack_size(*stack_a) / 2))
 				ra(stack_a);
 			else
 				rra(stack_a);

@@ -6,43 +6,65 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:47:47 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/22 10:53:55 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/25 12:11:44 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	exit_error(void)
-{
-	write(1, "Error\n", 6);
-	exit(EXIT_FAILURE);
-}
-
-void	free_stack_error(t_stack *stack)
-{
-	free_stack(stack);
-	exit_error();
-}
-
-int	ft_isdigit(int c)
-{
-	return (c >= '0' && c <= '9');
-}
-
-int	is_valid_number(const char *str)
+void	free_array(char **array)
 {
 	int	i;
 
 	i = 0;
-	if (!str)
-		return (0);
-	if (str[i] == '+' || str[i] == '-')
-		i++;
-	while (str[i])
+	while (array[i])
 	{
-		if (!ft_isdigit(str[i]))
-			return (0);
+		free(array[i]);
 		i++;
 	}
-	return (1);
+	free(array);
+}
+
+void	exit_free_stack(t_stack *stack, int error)
+{
+	free_stack(stack);
+	if (!error)
+		exit(EXIT_SUCCESS);
+	else
+	{
+		write(1, "Error\n", 6);
+		exit(EXIT_FAILURE);
+	}	
+}
+
+static int	error_number(int *error)
+{
+	*error = 1;
+	return (0);
+}
+
+int	ft_atoi(const char *str, int *error)
+{
+	long	res;
+	int		sign;
+	int		i;
+
+	res = 0;
+	sign = 1;
+	i = 0;
+	*error = 0;
+	if (!str)
+		return (error_number(error));
+	if (str[i] == '+' || str[i] == '-')
+		if (str[i++] == '-')
+			sign = -1;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = res * 10 + (str[i++] - 48);
+		if (sign * res < INT_MIN || sign * res > INT_MAX)
+			return (error_number(error));
+	}
+	if (str[i])
+		return (error_number(error));
+	return (sign * res);
 }

@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:40:51 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/24 07:32:39 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/25 12:12:13 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
 # include <stdio.h> // TO DELETE
 
 typedef struct s_stack
@@ -26,9 +27,8 @@ typedef struct s_stack
 /* stack */
 t_stack	*init_stack(int ac, char **av);
 void	free_stack(t_stack *stack);
-int		stack_len(t_stack *stack);
+int		stack_size(t_stack *stack);
 int		stack_smallest_element(t_stack *stack, int *index);
-void	print_stack(t_stack *stack);
 void	check_valid_stack(t_stack *stack);
 /* sort */
 void	sort(t_stack **stack_a, t_stack **stack_b);
@@ -50,11 +50,11 @@ void	rra(t_stack **stack_a);
 void	rrb(t_stack **stack_b);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
 /* utils */
-int		ft_atoi(const char *str);
+void	free_array(char **array);
+void	exit_free_stack(t_stack *stack, int error);
+int		ft_atoi(const char *str, int *error);
 char	**ft_split(const char *s, char c);
-void	exit_error(void);
-void	free_stack_error(t_stack *stack);
-int		ft_isdigit(int c);
-int		is_valid_number(const char *str);
+/* TO DELETE */
+void	print_stack(t_stack *stack);
 
 #endif
