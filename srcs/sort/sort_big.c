@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 12:41:08 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/25 12:05:59 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/26 10:55:48 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,21 +75,22 @@ void	sort_struct(t_stack **stack_a)
 {
 	int	*tab_new;
 	int	*tab;
-	int	size;
 	int	i;
 	int	j;
 
 	tab = parsing_tab(stack_a, 1);
 	tab_new = parsing_tab(stack_a, 0);
-	size = stack_size(*stack_a);
 	i = 0;
-	while (i < size)
+	while (i < stack_size(*stack_a))
 	{
 		j = 0;
-		while (j < size)
+		while (j < stack_size(*stack_a))
 		{
 			if (tab_new[i] == tab[j])
+			{
 				tab_new[i] = j;
+				break ;
+			}
 			j++;
 		}
 		i++;
