@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:40:23 by fluchten          #+#    #+#             */
-/*   Updated: 2023/01/26 10:53:52 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/01/27 14:20:02 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int ac, char **av)
 	char	**array;
 
 	if (!check_args(ac, av))
-		return (0);
+		return (1);
 	if (ac == 2)
 	{
 		array = ft_split(av[1], ' ');
